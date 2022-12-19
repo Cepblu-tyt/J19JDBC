@@ -1,7 +1,8 @@
-package org.example;
+import static controllers.Item.getAllItems;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        getAllItems();
     }
+
 }
