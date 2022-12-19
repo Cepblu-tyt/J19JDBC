@@ -40,15 +40,15 @@ public class Item {
     public static boolean createNewItem() {
         // add promts to tell user what data they need to enter next
         System.out.print("Enter the item name: ");
-        String name = scanner.next();
+        String name = scanner.nextLine();
 
-        System.out.print("");
-        String desc = scanner.next();
+        System.out.print("Enter the item description: ");
+        String desc = scanner.nextLine();
 
-        System.out.print("");
+        System.out.print("Enter the item qty: ");
         int qty = scanner.nextInt();
 
-        System.out.print("");
+        System.out.print("Enter the item price:");
         float price = scanner.nextFloat();
 
         try {
@@ -62,4 +62,38 @@ public class Item {
             return false;
         }
     }
+    // 20 min.
+    // Implement a method to update an item using its id, where its id
+    // should be passed by the user, i. e use the scanner class to get the id.
+
+
+    public static boolean updateItem() {
+
+
+            System.out.print("Enter the item name: ");
+            String name = scanner.nextLine();
+
+            System.out.print("Enter the item description: ");
+            String desc = scanner.nextLine();
+
+              System.out.print("Enter the item id to be changed: ");
+              int id = scanner.nextInt();
+
+            System.out.print("Enter the item qty: ");
+            int qty = scanner.nextInt();
+
+            try {
+                ps = connection.prepareStatement("UPDATE items SET" +
+                        "name='" + name + "', " +
+                        "description= '" + desc + "', " +
+                        "qty_in_stock=" + qty + "" +
+                        "WHERE id= " + id);
+                ps.execute();
+                return true;
+            } catch (SQLException e) {
+                e.printStackTrace();
+                return false;
+            }
+        }
+
 }
