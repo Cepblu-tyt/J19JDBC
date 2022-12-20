@@ -112,19 +112,28 @@ public class Item {
         }
     }
 
-    public static boolean getItemById() {
+    public static void getItemById() {
 
-        System.out.print("Enter the item's id: ");
+        System.out.print("Enter the items id you want to get info: ");
         int id = scanner.nextInt();
 
-        try {
-            ps = connection.prepareStatement("SELECT * FROM items " +
-                    "WHERE id = " + id);
-            ps.execute();
-            return true;
+        try{
+            ps = connection.prepareStatement("SELECT * FROM items WHERE id = "+id+"");
+            rs = ps.executeQuery();
+
+            //Loop through the result set
+            while (rs.next()) {
+                // String id = "id: " + rs.getInt("id");
+                String name = "name: " + rs.getString("name");
+                String desc = "desc: " + rs.getString("description");
+                String qty = "qty: " + rs.getInt("qty_in_stock");
+                String price = "price: " + rs.getFloat("price");
+
+
+                System.out.println(id + " " + name + " " + desc + " " + qty + " " + price);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
 
     }
