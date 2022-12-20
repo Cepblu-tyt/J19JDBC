@@ -68,32 +68,65 @@ public class Item {
 
 
     public static boolean updateItem() {
+        // Prompt the user for info
+        System.out.print("Enter the new name: ");
+        String name = scanner.nextLine();
 
+        System.out.print("Enter the new description: ");
+        String desc = scanner.nextLine();
 
-            System.out.print("Enter the item name: ");
-            String name = scanner.nextLine();
+        System.out.print("Enter the item's id: ");
+        int id = scanner.nextInt();
 
-            System.out.print("Enter the item description: ");
-            String desc = scanner.nextLine();
+        System.out.print("Enter the new quantity: ");
+        int qty = scanner.nextInt();
 
-              System.out.print("Enter the item id to be changed: ");
-              int id = scanner.nextInt();
-
-            System.out.print("Enter the item qty: ");
-            int qty = scanner.nextInt();
-
-            try {
-                ps = connection.prepareStatement("UPDATE items SET" +
-                        "name='" + name + "', " +
-                        "description= '" + desc + "', " +
-                        "qty_in_stock=" + qty + "" +
-                        "WHERE id= " + id);
-                ps.execute();
-                return true;
-            } catch (SQLException e) {
-                e.printStackTrace();
-                return false;
-            }
+        try {
+            ps = connection.prepareStatement("UPDATE items SET " +
+                    "name = '" + name + "', " +
+                    "description = '" + desc + "', " +
+                    "qty_in_stock = " + qty + " " +
+                    "WHERE id = " + id);
+            ps.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
         }
+    }
+
+
+    public static boolean deleteItem() {
+
+        System.out.print("Enter the item's id: ");
+        int id = scanner.nextInt();
+
+        try {
+            ps = connection.prepareStatement("DELETE FROM items " +
+                   "WHERE id = " + id);
+            ps.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static boolean getItemById() {
+
+        System.out.print("Enter the item's id: ");
+        int id = scanner.nextInt();
+
+        try {
+            ps = connection.prepareStatement("SELECT * FROM items " +
+                    "WHERE id = " + id);
+            ps.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
 
 }
