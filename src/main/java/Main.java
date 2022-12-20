@@ -1,12 +1,20 @@
+import controllers.Customer;
 import controllers.Item;
+import controllers.menu.Menu;
 
-import static controllers.Item.getAllItems;
+import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
-        Item.getAllItems();
-        Item.deleteItem();
-        Item.getItemById();
+        Customer.createCustomerTable();
+        Item.createItemsTable();
+        // subsequent objects will have their create table
+        // methods here
+
+        Menu.mainMenu();
     }
+
+    // Write
+
 
 }

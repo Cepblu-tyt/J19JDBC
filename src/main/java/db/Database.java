@@ -9,7 +9,7 @@ public class Database {
     // Declare the connection outside the try/catch block to allow you
     // return it after the commands have been executed.
 
-    public static Connection DBConn() {
+    public static Connection DbConn() {
 
         Connection connection = null;
 
