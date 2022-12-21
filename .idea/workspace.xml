@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="324984a8-5a4d-4381-92bf-2b86cb28ec1e" name="Changes" comment="items sql">
+    <list default="true" id="324984a8-5a4d-4381-92bf-2b86cb28ec1e" name="Changes" comment="exercise done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/Sales.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/menu/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671560936176</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="exercise done">
+      <created>1671642047732</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671642047732</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -147,6 +154,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="all items sql" />
     <MESSAGE value="items sql" />
-    <option name="LAST_COMMIT_MESSAGE" value="items sql" />
+    <MESSAGE value="exercise done" />
+    <option name="LAST_COMMIT_MESSAGE" value="exercise done" />
   </component>
 </project>
