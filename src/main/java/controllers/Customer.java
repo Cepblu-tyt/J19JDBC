@@ -14,6 +14,8 @@ public class Customer {
     static ResultSet rs;
     static Scanner scanner = new Scanner(System.in);
 
+    //CRUD - CREATE READ UPDATE DELETE
+
     // Create a table for the class above if and only if it doesn't already exist.
     public static boolean createCustomerTable() {
         try {
@@ -50,5 +52,84 @@ public class Customer {
             e.printStackTrace();
         }
     }
+    // 30 mins
+    // Complete the Customer class by adding the CREATE, UPDATE and DELETE functionalities
+    // to handle those respective operations on a customer objects or record.
+
+    public static boolean createNewCustomer() {
+        // Add prompts to tell the user what data they need to enter next
+        System.out.print("Enter first name: ");
+        String firstName = scanner.nextLine();
+
+        System.out.print("Enter last name: ");
+        String lastName = scanner.nextLine();
+
+        System.out.print("Enter the email: ");
+        String email = scanner.nextLine();
+
+        try {
+            ps = connection.prepareStatement("INSERT INTO customer(first_name, last_name, email) " +
+                    "VALUES('" + firstName + "', '" + lastName + "', '" + email + "')");
+
+            ps.execute();
+
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
+
+
+
+    public static boolean updateCustomer() {
+        // Prompt the user for info
+        System.out.print("Enter the new first name: ");
+        String firstName = scanner.nextLine();
+
+        System.out.print("Enter the new last name: ");
+        String lastName = scanner.nextLine();
+
+        System.out.print("Enter the customer's id: ");
+        int id = scanner.nextInt();
+
+        System.out.print("Enter the new email: ");
+        String email = scanner.nextLine();
+
+        try {
+            ps = connection.prepareStatement("UPDATE customer SET " +
+                    "first_name = '" + firstName + "', " +
+                    "last_name = '" + lastName + "', " +
+                    "email = '" + email + "' " +
+                    "WHERE id = " + id);
+            ps.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
+    public static boolean deleteCustomer() {
+
+        System.out.print("Enter the customer's id: ");
+        int id = scanner.nextInt();
+
+        try {
+            ps = connection.prepareStatement("DELETE FROM customer " +
+                    "WHERE id = " + id);
+            ps.execute();
+
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
 
 }

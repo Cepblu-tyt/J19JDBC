@@ -115,6 +115,38 @@ public class Item {
 
     // The second method should be called getItemById() and it should prompt
     // the user to also the id of the item in question.
+    public static boolean deleteItem() {
+
+        System.out.print("Enter the item's id: ");
+        int id = scanner.nextInt();
+
+        try {
+            ps = connection.prepareStatement("DELETE FROM items " +
+                    "WHERE id = " + id);
+            ps.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static boolean getItemById() {
+
+        System.out.print("Enter the item's id: ");
+        int id = scanner.nextInt();
+
+        try {
+            ps = connection.prepareStatement("SELECT * FROM items " +
+                    "WHERE id = " + id);
+            ps.execute();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
 
 
 }
